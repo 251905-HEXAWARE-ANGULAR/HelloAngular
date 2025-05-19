@@ -1,0 +1,17 @@
+<p>Hello from Parent Component!</p>
+
+<p>Look at my childen:</p>
+
+<div>
+    <!-- *ngFor - great for DYNAMICALLY RENDERING multiple components -->
+    <app-child-component *ngFor = "let num of arr"/>
+</div>
+
+<!-- *ngIf - great for CONDITIONAL RENDERING -->
+<p *ngIf = "arr.length > 0">
+    <!-- STRING INTERPOLATION - taking a value from the TS and rendering it on the HTML page -->
+    I have {{arr.length}} children! I am very tired
+</p>
+
+<!-- EVENT BINDING - attaching a function that runs when you (click) this button -->
+<button (click)="showSurprise()">Click for a surprise...</button>
