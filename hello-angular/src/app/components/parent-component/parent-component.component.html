@@ -4,7 +4,7 @@
 
 <div>
     <!-- *ngFor - great for DYNAMICALLY RENDERING multiple components -->
-    <app-child-component *ngFor = "let num of arr"/>
+    <app-child-component *ngFor = "let num of arr" [index]="num"/>
 </div>
 
 <!-- *ngIf - great for CONDITIONAL RENDERING -->
@@ -15,3 +15,16 @@
 
 <!-- EVENT BINDING - attaching a function that runs when you (click) this button -->
 <button (click)="showSurprise()">Click for a surprise...</button>
+
+<!-- PROPERTY BINDING - using the value of a variable in the TS to determine the value of an element's attribute -->
+<div (mouseover)="toggleHideDiv()">
+    <p>I am a paragraph that's always visible</p>
+    <p [hidden]="hideDiv">Hello I am a paragraph that was previously hidden - toggled with property binding!</p>
+</div>
+
+<h3>Wait a minute... who are you?</h3>
+
+<!-- TWO WAY BINDING - Lets you take user input and save it in a variable defined in the TS -->
+<input type="text" [(ngModel)]="name"/>
+
+<h4 *ngIf="name">Hello, {{name}}. Nice to meet you!</h4>
